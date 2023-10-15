@@ -1,0 +1,144 @@
+[
+  // temporal data
+  // Take the Month and day of the week, if we expect to see some predictive power in the date it probably involves the temporal rhythm of seasonality or the shorter rhythm of the weekly routine. We shrunk the dataset down to only two years so not much is given by the year column, quarter is another encoding of month, DayofMonth doesn't deliver much information unless it happens to be the 25th day of the 12th month, for example. and the FlightDate is a timestamp, a combination of all of these values.
+  // "Year",
+  // "Quarter",
+  "Month",
+  // "DayofMonth",
+  "DayOfWeek",
+  // "FlightDate",
+  // Identifying the categorical airline
+  "Reporting_Airline",
+  // This may identify the route per airline, but we have the origin/destination airports, as well as the distance
+  // "Flight_Number_Reporting_Airline",
+  // Identifying the individual aircraft
+  "Tail_Number",
+  // Scratching the origin and destination airports in lieu of latitude and longitude values, this gives us slightly more information even though it's split up into two features we expect to see similarities for northern vs southern airports, especially in winter months
+  // "OriginCityMarketID",
+  // "Origin",
+  // "DestCityMarketID",
+  // "Dest",
+  //   "Origin_DISPLAY_AIRPORT_NAME",
+  // "Origin_DISPLAY_AIRPORT_CITY_NAME_FULL",
+  "Origin_LATITUDE",
+  "Origin_LONGITUDE",
+  // "Dest_DISPLAY_AIRPORT_NAME",
+  // "Dest_DISPLAY_AIRPORT_CITY_NAME_FULL",
+  "Dest_LATITUDE",
+  "Dest_LONGITUDE",
+  // Flight timing
+  // CRS is Computer Reservation System, this is the planned departure and arrival time, any delay can be calculated by the difference between this and the actual
+  // For supervised learning, the delay will be our dependent variable, it will be an OR combination of departure delay and arrival delay, if either are true, we consider the label delayed
+  "CRSDepTime",
+  // "DepTime",
+  // "DepDelay", // Create delayed label from this
+  // "DepDelayMinutes",
+  // "DepDel15",
+  // "DepartureDelayGroups",
+  // "DepTimeBlk",
+  // "TaxiOut",
+  // "WheelsOff",
+  // "WheelsOn",
+  // "TaxiIn",
+  "CRSArrTime",
+  // "ArrTime",
+  // "ArrDelay", // Create delayed label from this
+  // "ArrDelayMinutes",
+  // "ArrDel15",
+  // "ArrivalDelayGroups",
+  // "ArrTimeBlk",
+  // Remove cancelled and diverted flights
+  // "Cancelled",
+  // "Diverted",
+  // This is just the difference between the planned departure and arrival
+  // "CRSElapsedTime",
+  // This encodes some factor of the delay
+  // "ActualElapsedTime",
+  // "AirTime",
+  // Flights is always 1
+  // "Flights",
+  // We may see some benefit of using the group vs the raw distance here, experimentation needed, we might only care if it is a short, medium, or long distance flight
+  // "Distance",
+  "DistanceGroup",
+  // The reason for the delay, we can't include this in the supervised learning model
+  // "CarrierDelay",
+  // "WeatherDelay",
+  // "NASDelay",
+  // "SecurityDelay",
+  // "LateAircraftDelay",
+  // Only matters for diversions, which we're filtering off
+  // "DivAirportLandings",
+  // Duplicate
+  // "N-NUMBER",
+  // Granular aircraft data
+  // "SERIAL NUMBER",
+  // "MFR MDL CODE",
+  // "ENG MFR MDL",
+  "YEAR MFR",
+  "TYPE REGISTRANT",
+  "NAME",
+  // The registrants address and registration information
+  // "STREET",
+  // "CITY",
+  // "STATE",
+  // "ZIP CODE",
+  // "REGION",
+  // "COUNTY",
+  // "COUNTRY",
+  // "LAST ACTION DATE",
+  // "CERT ISSUE DATE",
+  // "CERTIFICATION",
+  // Only 5 could be plausible
+  // 1 - Glider
+  // 2 - Balloon
+  // 3 - Blimp/Dirigible
+  // 4 - Fixed wing single engine
+  //     5 - Fixed wing multi engine
+  // 6 - Rotorcraft
+  // 7 - Weight-shift-control
+  // 8 - Powered Parachute
+  // 9 - Gyroplane
+  // H - Hybrid Lift
+  // O - Other
+  // "TYPE AIRCRAFT",
+  // Only 5 could be plausible
+  // 0 - None
+  // 1 - Reciprocating
+  // 2 - Turbo-prop
+  // 3 - Turbo-shaft
+  // 4 - Turbo-jet
+  //     5 - Turbo-fan
+  // 6 - Ramjet
+  // 7 - 2 Cycle
+  // 8 - 4 Cycle
+  // 9 – Unknown
+  // 10 – Electric
+  // 11 - Rotary
+  // "TYPE ENGINE",
+  // "STATUS CODE",
+  // "MODE S CODE",
+  // "AIR WORTH DATE",
+  // "EXPIRATION DATE",
+  // "UNIQUE ID",
+  // "MODE S CODE HEX",
+  // "CODE",
+  "MFR", // this is the engine manufacturer, unsure about its utility
+  "MODEL",
+  // "TYPE",
+  // horsepower and thrust aren't very complete, and they are properly encoded as the aircraft model
+  // "HORSEPOWER",
+  // "THRUST",
+  // "CODE_aircraft",
+  "MFR_aircraft",
+  "MODEL_aircraft"
+  // "TYPE-ACFT",
+  // "TYPE-ENG",
+  // "AC-CAT",
+  // "BUILD-CERT-IND",
+  // "NO-ENG",
+  // Seats is encoded in the model
+  // "NO-SEATS",
+  // "AC-WEIGHT",
+  // "SPEED",
+  // "faa_registration_origin"
+]
