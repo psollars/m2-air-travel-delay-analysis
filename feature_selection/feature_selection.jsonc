@@ -88,33 +88,10 @@
   // "LAST ACTION DATE",
   // "CERT ISSUE DATE",
   // "CERTIFICATION",
-  // Only 5 could be plausible
-  // 1 - Glider
-  // 2 - Balloon
-  // 3 - Blimp/Dirigible
-  // 4 - Fixed wing single engine
-  //     5 - Fixed wing multi engine
-  // 6 - Rotorcraft
-  // 7 - Weight-shift-control
-  // 8 - Powered Parachute
-  // 9 - Gyroplane
-  // H - Hybrid Lift
-  // O - Other
-  // "TYPE AIRCRAFT",
-  // Only 5 could be plausible
-  // 0 - None
-  // 1 - Reciprocating
-  // 2 - Turbo-prop
-  // 3 - Turbo-shaft
-  // 4 - Turbo-jet
-  //     5 - Turbo-fan
-  // 6 - Ramjet
-  // 7 - 2 Cycle
-  // 8 - 4 Cycle
-  // 9 – Unknown
-  // 10 – Electric
-  // 11 - Rotary
-  // "TYPE ENGINE",
+  // Only 4 & 5 could be plausible
+  // "TYPE AIRCRAFT", // 4 - Fixed wing single engine,  5 - Fixed wing multi engine
+  // Only 4 & 5 could be plausible
+  // "TYPE ENGINE", // 4 - Turbo-jet     5 - Turbo-fan
   // "STATUS CODE",
   // "MODE S CODE",
   // "AIR WORTH DATE",
